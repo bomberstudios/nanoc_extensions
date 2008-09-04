@@ -9,3 +9,25 @@ Feel free to make with them as you please.
 ### copy.rb
 
 A dumb filter that copies a binary asset to the output folder. Coded as an example of how a binary filter works.
+
+### sips_flatten
+
+Uses the 'sips' command line tool in Mac OS X to flatten Fireworks images. Output format can be defined in the asset's YAML file using the 'flatten_format' property:
+
+      binary: true
+      filters: ['sips_flatten']
+      flatten_format: 'png'
+
+where `flatten_format` can be `png` (the default), `jpeg`, `tiff`, `gif`, `jp2`, `pict`, `bmp`, `qtif`, `psd`, `sgi` or `tga`.
+
+It supports multiple asset representations, so you can output multiple formats by having a YAML like:
+
+      binary: true
+      filters: ['sips_flatten']
+      reps:
+        default:
+          flatten_format: 'png'
+          custom_path: /assets/image.png
+        jpg:
+          flatten_format: 'jpeg'
+          custom_path: /assets/image.jpg
