@@ -4,13 +4,13 @@ This is a playground for [nanoc](http://nanoc.stoneship.org) plugins, filters an
 
 Feel free to make with them as you please.
 
-## filters
+## filters/
 
 ### copy.rb
 
 A dumb filter that copies a binary asset to the output folder. Coded as an example of how a binary filter works.
 
-### sips_flatten
+### sips_flatten.rb
 
 Uses the 'sips' command line tool in Mac OS X to flatten Fireworks images. Output format can be defined in the asset's YAML file using the 'flatten_format' property:
 
