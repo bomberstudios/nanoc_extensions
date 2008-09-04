@@ -31,3 +31,27 @@ It supports multiple asset representations, so you can output multiple formats b
         jpg:
           flatten_format: 'jpeg'
           custom_path: /assets/image.jpg
+
+
+### sips_thumbnail.rb
+
+Uses the 'sips' command line tool in Mac OS X to build image thumbnails. Output format can be defined in the asset's YAML file using the 'thumbnail_format' property. Max width/height is set with the `thumbnail_size` property:
+
+      binary: true
+      filters: ['sips_thumbnail']
+      thumbnail_format: 'png'
+      thumbnail_size: 200
+
+where `thumbnail_format` can be `png` (the default), `jpeg`, `tiff`, `gif`, `jp2`, `pict`, `bmp`, `qtif`, `psd`, `sgi` or `tga`.
+
+It supports multiple asset representations, so you can output multiple thumbnails by having a YAML like:
+
+      binary: true
+      filters: ['sips_thumbnail']
+      reps:
+        big:
+          thumbnail_size: 200
+        medium:
+          thumbnail_size: 120
+        small:
+          thumbnail_size: 64
