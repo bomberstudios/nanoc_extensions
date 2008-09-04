@@ -3,3 +3,9 @@
 This is a playground for [nanoc](http://nanoc.stoneship.org) plugins, filters and commands.
 
 Feel free to make with them as you please.
+
+## filters
+
+### copy.rb
+
+A dumb filter that copies a binary asset to the output folder. Coded as an example of how a binary filter works.
