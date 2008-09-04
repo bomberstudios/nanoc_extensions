@@ -4,6 +4,19 @@ This is a playground for [nanoc](http://nanoc.stoneship.org) plugins, filters an
 
 Feel free to make with them as you please.
 
+## commands/
+
+### validate.rb
+
+A command that validates the HTML files in the output folder. It uses the W3C online validator, so it needs network access.
+
+So far it just checks if the HTML is valid, but doesn't give you any clue if it isn't.
+
+For more info, run
+
+      $ nanoc help validate
+
+
 ## filters/
 
 ### copy.rb
