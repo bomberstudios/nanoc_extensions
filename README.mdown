@@ -1,0 +1,5 @@
+# nanoc extensions
+
+This is a playground for [nanoc](http://nanoc.stoneship.org) plugins, filters and commands.
+
+Feel free to make with them as you please.
