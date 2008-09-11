@@ -8,15 +8,20 @@ Feel free to make with them as you please.
 
 ### validate.rb
 
-A command that validates the HTML files in the output folder. It uses the W3C online validator, so it needs network access.
+A command that validates the HTML and CSS files in the output folder. It uses the W3C online validator, so it needs network access.
 
-So far it just checks if the HTML is valid, but doesn't give you any clue if it isn't.
+It requires the `w3c_validators` gem. Install it with
 
-For more info, run
+      $ gem install w3c_validators
+
+Use it with
+
+      $ nanoc validate
+
+By default, it tries to validate HTML as XHTML 1.0 Transitional and CSS as CSS 2.0. You can change the options with the -d (doctype), -c (charset) and -p (CSS profile) options. For more info on options, run
 
       $ nanoc help validate
 
-If you need a *real* validator for nanoc, [try this one](http://gist.github.com/8961)
 
 ## plugins/
 
