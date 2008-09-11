@@ -16,6 +16,15 @@ For more info, run
 
       $ nanoc help validate
 
+## plugins/
+
+### gist.rb
+
+A simple plugin to embed Gists on your content. To embed a gist, use:
+
+    <%= gist 8961 %>
+
+It will include a small style definition (font: 12px Consolas) to make Gists easier to read.
 
 ## filters/
 
