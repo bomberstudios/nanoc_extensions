@@ -1,8 +1,23 @@
-# A nanoc command to validate HTML files in the output folder
+# A nanoc command to validate HTML and CSS files in the output folder
 # 
 # Place in your_site/lib/commands/ and use with 'nanoc validate'
 # 
-# It uses the w3c_validators gem
+# A command that validates the HTML and CSS files in the output folder.
+# It uses the W3C online validator, so it needs network access.
+# 
+# It requires the `w3c_validators` gem. Install it with
+# 
+#     $ gem install w3c_validators
+# 
+# Use it with
+# 
+#     $ nanoc validate
+# 
+# By default, it tries to validate HTML as XHTML 1.0 Transitional and CSS
+# as CSS 2.0. You can change the options with the -d (doctype), -c (charset)
+# and -p (CSS profile) options. For more info on options, run
+# 
+#     $ nanoc help validate
 
 require 'w3c_validators'
 require 'nanoc/cli'
