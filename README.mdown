@@ -16,6 +16,8 @@ For more info, run
 
       $ nanoc help validate
 
+If you need a *real* validator for nanoc, [try this one](http://gist.github.com/8961)
+
 ## plugins/
 
 ### gist.rb
