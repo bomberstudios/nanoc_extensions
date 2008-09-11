@@ -87,7 +87,7 @@ class ValidateCommand < Nanoc::CLI::Command
   end
 
   def validate ext
-    @validator = (ext == ".css" ? W3CValidators::CSSValidator.new : W3CValidators::MarkupValidator.new(:doctype => @doctype, :charset => @charset) )
+    @validator = (ext == ".css" ? W3CValidators::CSSValidator.new(:csslevel => @profile) : W3CValidators::MarkupValidator.new(:doctype => @doctype, :charset => @charset) )
     Dir["#{@output}/**/*#{ext}"].each do |file|
       puts colorize("\tValidating\t#{file}","\e[0m")
       if ext == ".html"
@@ -108,5 +108,3 @@ class ValidateCommand < Nanoc::CLI::Command
     end
   end
 end
-
-wrap
