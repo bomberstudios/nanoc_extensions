@@ -9,7 +9,7 @@
 
 def path_for page_id
   # Find page
-  target_page = @pages.select { |page| page.path.gsub("/","").gsub(".#{page.extension}","") == page_id.to_s }.first
+  target_page = @pages.select { |page| page.path.gsub(/^\//,"").gsub(/\/$/,"").gsub(".#{page.extension}","") == page_id.to_s }.first
   if target_page.nil?
     return "#"
   else
