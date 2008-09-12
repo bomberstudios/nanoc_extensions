@@ -33,6 +33,14 @@ A simple plugin to embed Gists on your content. To embed a gist, use:
 
 It will include a small style definition (font: 12px Consolas) to make Gists easier to read.
 
+### path_for.rb
+
+A nanoc plugin that returns the path of a page given its page_id (its "name").
+
+In your ERB-enabled layout or content, use:
+
+    <a href="<%= path_for :home %>">Home</a>
+
 ## filters/
 
 ### copy.rb
