@@ -22,14 +22,13 @@ By default, it tries to validate HTML as XHTML 1.0 Transitional and CSS as CSS 2
 
       $ nanoc help validate
 
-
 ## plugins/
 
 ### gist.rb
 
 A simple plugin to embed Gists on your content. To embed a gist, use:
 
-    <%= gist 8961 %>
+      <%= gist 8961 %>
 
 It will include a small style definition (font: 12px Consolas) to make Gists easier to read.
 
@@ -43,11 +42,11 @@ copy to your site's lib folder.
 Usage:
 in your ERB-enabled layout or content, use:
 
-    <a href="<%= path_for :home %>">Home</a>
+      <a href="<%= path_for :home %>">Home</a>
 
 You can use a symbol or a string for your page name. Strings are nice for pages in subfolders:
 
-    <a href="<%= path_for "blog/2008/post_name" %>">A nice post</a>
+      <a href="<%= path_for "blog/2008/post_name" %>">A nice post</a>
 
 ## filters/
 
