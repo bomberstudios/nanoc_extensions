@@ -6,6 +6,9 @@
 # Usage:
 # in your ERB-enabled layout or content, use: <a href="<%= path_for :home %>">Home</a>
 # 
+# You can use a symbol or a string for your page name. Strings are nice for pages in subfolders:
+# 
+# <a href="<%= path_for "blog/2008/post_name" %>">A nice post</a>
 
 def path_for page_id
   # Find page

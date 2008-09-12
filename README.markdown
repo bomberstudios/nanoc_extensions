@@ -35,11 +35,19 @@ It will include a small style definition (font: 12px Consolas) to make Gists eas
 
 ### path_for.rb
 
-A nanoc plugin that returns the path of a page given its page_id (its "name").
+A nanoc plugin that returns the path of a page given its page_id (its "name")
 
-In your ERB-enabled layout or content, use:
+Installation:
+copy to your site's lib folder.
+
+Usage:
+in your ERB-enabled layout or content, use:
 
     <a href="<%= path_for :home %>">Home</a>
+
+You can use a symbol or a string for your page name. Strings are nice for pages in subfolders:
+
+    <a href="<%= path_for "blog/2008/post_name" %>">A nice post</a>
 
 ## filters/
 
