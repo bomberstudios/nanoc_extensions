@@ -8,5 +8,11 @@
 # 
 
 def path_for page_id
-  @pages.select { |page| page.path.gsub("/","").gsub(".#{page.extension}","") == page_id.to_s }.first.path
+  # Find page
+  target_page = @pages.select { |page| page.path.gsub("/","").gsub(".#{page.extension}","") == page_id.to_s }.first
+  if target_page.nil?
+    return "#"
+  else
+    return target_page.path
+  end
 end
