@@ -68,13 +68,9 @@ class ValidateCommand < Nanoc::CLI::Command
 
     @output = @base.site.config[:output_dir]
 
-    @doctype = options[:doctype] || :xhtml10_transitional
-    @charset = options[:charset] || :utf_8
-    @profile = options[:profile] || :css2
-
-    @doctype = W3CValidators::DOCTYPES[@doctype.to_sym]
-    @charset = W3CValidators::CHARSETS[@charset.to_sym]
-    @profile = W3CValidators::CSS_PROFILES[@profile.to_sym]
+    @doctype = W3CValidators::DOCTYPES[options[:doctype]]
+    @charset = W3CValidators::CHARSETS[options[:charset]]
+    @profile = W3CValidators::CSS_PROFILES[options[:profile]]
 
     # Colorize the output :)
     def colorize(text, color_code); "#{color_code}#{text}\e[0m"; end
@@ -91,10 +87,10 @@ class ValidateCommand < Nanoc::CLI::Command
     Dir["#{@output}/**/*#{ext}"].each do |file|
       puts colorize("\tValidating\t#{file}","\e[0m")
       if ext == ".html"
-        puts colorize("\tDOCTYPE:\t#{@doctype}","\e[0m")
-        puts colorize("\tCHARSET:\t#{@charset}","\e[0m")
+        puts colorize("\tDOCTYPE:\t#{@doctype || '(auto)'}","\e[0m")
+        puts colorize("\tCHARSET:\t#{@charset || '(auto)'}","\e[0m")
       else
-        puts colorize("\tCSS_PROFILE:\t#{@profile}","\e[0m")
+        puts colorize("\tCSS_PROFILE:\t#{@profile || '(auto)'}","\e[0m")
       end
       results = @validator.validate_file(file)
       if results.errors.length > 0
