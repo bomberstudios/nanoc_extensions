@@ -29,7 +29,7 @@ class ValidateCommand < Nanoc::CLI::Command
   end
 
   def aliases
-    %w( va )
+    []
   end
 
   def short_desc
