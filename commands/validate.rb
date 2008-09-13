@@ -49,17 +49,17 @@ class ValidateCommand < Nanoc::CLI::Command
       # --doctype
       {
         :long => 'doctype', :short => 'd', :argument => :required,
-        :desc => "set the DOCTYPE to use, from #{W3CValidators::DOCTYPES.keys.to_a.join(', ')}"
+        :desc => "set the DOCTYPE to use, from #{W3CValidators::DOCTYPES.keys.map { |k| k.to_s }.sort.join(', ')}"
       },
       # --charset
       {
         :long => 'charset', :short => 'c', :argument => :required,
-        :desc => "set the CHARSET to use, from #{W3CValidators::CHARSETS.keys.to_a.join(', ')}"
+        :desc => "set the CHARSET to use, from #{W3CValidators::CHARSETS.keys.map { |k| k.to_s }.sort.join(', ')}"
       },
       # --profile
       {
         :long => 'profile', :short => 'p', :argument => :required,
-        :desc => "set the CSS Profile to use, from #{W3CValidators::CSS_PROFILES.keys.to_a.join(', ')}"
+        :desc => "set the CSS Profile to use, from #{W3CValidators::CSS_PROFILES.keys.map { |k| k.to_s }.sort.join(', ')}"
       }
     ]
   end
